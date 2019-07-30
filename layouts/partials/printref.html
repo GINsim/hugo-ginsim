@@ -1,0 +1,39 @@
+{{/* ********************************************************************************
+     Generate HTML representation of a reference from a JSON dictionnary
+******************************************************************************** */}}
+{{ $bib := .Scratch.Get "_cur_ref_" }}
+{{ with $bib }}
+{{/******************    AUTHORS    ******************/}}
+    {{ $authors := $bib.authors}}
+    <p class="ref">
+        <span class="title">{{ $bib.title }}</span>
+        <br/><span class="authors">
+    {{ range $idx, $who := $bib.authors }}{{ if $idx }}, {{ end }}{{ $given := index $who 1 }}{{substr $given 0 1}}. {{ index $who 0 }}{{ end }}
+        </span>
+        {{with $bib.year }}<span class="year">({{ $bib.year }})</span>{{ end }}.
+
+<br/>
+    {{/******************    JOURNAL    ******************/}}
+    {{with $bib.journal }}
+        <span class="journal">{{$bib.journal}}</span>
+    {{ end }}
+
+    {{/******************    POSITION   ******************/}}
+    <span class="position">{{ with $bib.volume }}{{ $bib.volume }}{{ end }}{{ with $bib.pages }}:{{ $bib.pages  }}{{ end }}</span>
+
+    {{/******************    LINKS    ******************/}}
+    {{with $bib.links }}<span class="links">[{{ range $type, $link := $bib.links }}
+        {{ $.Scratch.Set "url" $link }}
+        {{ $.Scratch.Set "show" $type }}
+        {{ if eq $type "doi" }}
+            {{ $.Scratch.Set "url"  (print "http://dx.doi.org/" $link) }}
+            {{ $.Scratch.Set "show" (printf "doi:%s" $link) }}
+        {{ else if eq $type "pmid" }}
+            {{ $.Scratch.Set "url"  (print "http://www.ncbi.nlm.nih.gov/pubmed/" $link) }}
+        {{ end }}
+        {{$url := $.Scratch.Get "url"}}
+        {{$show := $.Scratch.Get "show"}}
+        <span class="{{$type}}"><a href="{{$url}}">{{ $show }}</a></span>
+    {{ end }}]</span>{{end }}
+    </p>
+{{ end }}

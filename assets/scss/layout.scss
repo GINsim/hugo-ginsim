@@ -1,0 +1,145 @@
+html {
+    background: $extbg;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: $mainbg;
+    color: $maintxt;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14pt;
+}
+
+#content {
+    margin: 0 auto;
+    max-width: 60em;
+    min-width: 20em;
+    padding: 1em;
+
+    h2 {
+        border-bottom: solid;
+    }
+}
+
+$h_header: 4em;
+
+header {
+    background: $headbg;
+    color: $headtxt;
+    height: $h_header;
+    margin: 0;
+    padding: .2em .5em;
+
+    h1 {
+        margin: .4em .5em;
+    }
+
+    a:link, a:visited {
+        color: $headtxt;
+    }
+    a:hover {
+        color: $aheadtxt;
+    }
+}
+
+nav {
+    font-size: 75%;
+
+    height: $h_header;
+    padding: 0;
+    text-aligh: right;
+    position: absolute;
+    top: 2.47em;
+    right: 0;
+    margin: 0;
+
+    a:link, a:visited {
+        color: $headtxt;
+    }
+    a:hover {
+        color: $aheadtxt;
+    }
+
+    ul {
+        li {
+            display:inline-block;
+            list-style: none;
+            text-align: center;
+            margin-right: .5em;
+            line-height: 2em;
+
+            a {
+                        display: block;
+                background-color: $navbg;
+                margin: 0;
+                padding: .2em .5em;
+            }
+            a:hover {
+                background-color: $anavbg;
+                color: $headtxt;
+            }
+        }
+    }
+}
+
+
+a:link, a:visited {
+  font-weight: bold;
+  text-decoration: none;
+  color: $links;
+}
+a:hover {
+  color: $alinks;
+}
+
+p.ref {
+    font-size: 75%;
+    
+    border-left: solid;
+    padding: .1em .5em;
+    
+    .title {
+        font-weight: bold;
+    }
+    .authors {
+        font-style: italic;
+    }
+}
+
+dl {
+    dt {
+        float: left;
+        clear: left;
+        width: 10em;
+        font-weight: bold;
+    }
+    dt::after {
+        content: ":";
+    }
+    dd {
+        margin: 0 0 0 110px;
+        padding: 0 0 0.5em 0;
+    }
+}
+
+
+img {
+    margin: 1em
+}
+
+img[src~="right"] {
+    float: right;
+    margin-top: 0;
+    margin-left: 3em;
+}
+
+img[src~="thumb"] {
+    height: 150px;
+}
+
+h1 h2 h3 h4 h5 {
+    clear: both;
+}
+

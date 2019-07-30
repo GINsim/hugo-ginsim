@@ -1,0 +1,4 @@
+{{ $bibid := .Get 0 }}
+{{ $bib :=  index .Site.Data.references $bibid }}
+{{ $.Scratch.Set "_cur_ref_" $bib }}
+{{ partial "printref.html" $ }}
