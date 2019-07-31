@@ -1,0 +1,16 @@
+$extbg:    {{ .Site.Data.style.extbg | default "#fff" }};
+$mainbg:   {{ .Site.Data.style.mainbg | default "$extbg" }};
+$headbg:   {{ .Site.Data.style.headbg | default "#000" }};
+
+$maintxt:  {{ .Site.Data.style.maintxt | default "#000" }};
+$headtxt:  {{ .Site.Data.style.headtxt | default "#fff" }};
+$aheadtxt: {{ .Site.Data.style.aheadtxt | default "#258" }};
+
+$navbg: #777; 
+$anavbg: $aheadtxt;
+
+$links: #292;
+$alinks: #07c;
+
+@import 'layout';
+

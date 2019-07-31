@@ -16,20 +16,7 @@
 <link rel="manifest" href="/site.webmanifest" />
 {{ end -}}
 
-{{/*
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous" />
-*/}}
-
-{{ $style_resources := slice "colors" "custom_colors" "layout" "custom" }}
-{{ .Scratch.Set "styles" slice }}
-{{ range $style_resources }}
-    {{ $cur_style := printf "scss/%s.scss" . | resources.Get }}
-    {{ with $cur_style }}
-        {{ $.Scratch.Set "styles" (append $cur_style ($.Scratch.Get "styles")) }}
-    {{ end }}
-{{ end }}
-{{ $style := .Scratch.Get "styles" | resources.Concat "css/style.scss" | resources.ToCSS }}
+{{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 
 {{ range .AlternativeOutputFormats -}}

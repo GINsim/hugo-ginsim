@@ -143,3 +143,31 @@ h1 h2 h3 h4 h5 {
     clear: both;
 }
 
+
+section.children {
+
+    font-size: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    .relative {
+        margin: .5em;
+        flex: 1 1 25em;
+        .summary {
+            border: 1pt solid;
+            padding: .5em;
+            
+            h1 {
+                margin: 0;
+                margin-bottom: .4em;
+            }
+            
+            .text {
+                font-weight: normal;
+                color: #000;
+            }
+        }
+    }
+}
+
