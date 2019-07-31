@@ -1,16 +1,21 @@
+$basecolor:  {{ .Site.Data.style.basecolor | default "#811" }};
+$compcolor:  {{ .Site.Data.style.compcolor | default "#e80" }};
 $extbg:    {{ .Site.Data.style.extbg | default "#fff" }};
 $mainbg:   {{ .Site.Data.style.mainbg | default "$extbg" }};
-$headbg:   {{ .Site.Data.style.headbg | default "#000" }};
-
 $maintxt:  {{ .Site.Data.style.maintxt | default "#000" }};
 $headtxt:  {{ .Site.Data.style.headtxt | default "#fff" }};
-$aheadtxt: {{ .Site.Data.style.aheadtxt | default "#258" }};
 
-$navbg: #777; 
-$anavbg: $aheadtxt;
 
-$links: #292;
-$alinks: #07c;
+$headbg:   {{ .Site.Data.style.headbg | default "darken($basecolor, 10%)" }};
+$aheadtxt: {{ .Site.Data.style.aheadtxt | default "darken($compcolor, 10%)" }};
+$links: {{ .Site.Data.style.links | default "lighten($basecolor, 10%)" }};
+$alinks: {{ .Site.Data.style.alinks | default "lighten($compcolor, 10%)" }};
+
+$navbg: {{ .Site.Data.style.navbg | default "#777" }};
+$anavbg: {{ .Site.Data.style.anavbg | default "$aheadtxt" }};
+
 
 @import 'layout';
+
+
 
