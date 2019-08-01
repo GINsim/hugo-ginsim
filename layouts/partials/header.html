@@ -1,4 +1,5 @@
 <header>
+  <div class="title">
   <h1 class="brand"><a href="{{ .Site.BaseURL }}">
     {{- if isset $.Site.Params "brand"}}
       {{- $.Site.Params.brand -}}
@@ -6,5 +7,7 @@
       {{- $.Site.Title -}}
     {{ end -}}
   </a></h1>
-</header>
+  </div>
 {{- partial "nav.html" . -}}
+</header>
+

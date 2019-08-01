@@ -8,14 +8,15 @@ $headtxt:  {{ .Site.Data.style.headtxt | default "#fff" }};
 
 $headbg:   {{ .Site.Data.style.headbg | default "darken($basecolor, 10%)" }};
 $aheadtxt: {{ .Site.Data.style.aheadtxt | default "darken($compcolor, 10%)" }};
+$aheadtxt:  {{ .Site.Data.style.aheadtxt | default "darken($headtxt, 15%)" }};
 $links: {{ .Site.Data.style.links | default "lighten($basecolor, 10%)" }};
 $alinks: {{ .Site.Data.style.alinks | default "lighten($compcolor, 10%)" }};
 
-$navbg: {{ .Site.Data.style.navbg | default "#777" }};
-$anavbg: {{ .Site.Data.style.anavbg | default "$aheadtxt" }};
+$fillnav: {{ .Site.Data.style.fillnav | default "false" }};
+$navbg: {{ .Site.Data.style.navbg | default "#555" }};
+$anavbg: {{ .Site.Data.style.anavbg | default "lighten($navbg, 10%)" }};
 
 
 @import 'layout';
-
 
 

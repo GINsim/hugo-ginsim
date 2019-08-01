@@ -23,17 +23,23 @@ body {
     }
 }
 
-$h_header: 4em;
-
 header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
     background: $headbg;
     color: $headtxt;
-    height: $h_header;
     margin: 0;
-    padding: .2em .5em;
+    padding: .5em;
 
-    h1 {
-        margin: .4em .5em;
+    .title {
+        margin: 0;
+        padding: 0;
+        flex: 0 0 16em;
+        h1 {
+            margin: 0 .2em;
+        }
     }
 
     a:link, a:visited {
@@ -42,43 +48,42 @@ header {
     a:hover {
         color: $aheadtxt;
     }
-}
 
-nav {
-    font-size: 75%;
+    nav {
+        flex: 1 1 6em;
 
-    height: $h_header;
-    padding: 0;
-    text-aligh: right;
-    position: absolute;
-    top: 2.47em;
-    right: 0;
-    margin: 0;
+        font-size: 80%;
+        height: 100%;
+        padding: 0;
+        text-aligh: right;
+        margin: 0;
 
-    a:link, a:visited {
-        color: $headtxt;
-    }
-    a:hover {
-        color: $aheadtxt;
-    }
+        a:link, a:visited {
+            color: $headtxt;
+        }
+        a:hover {
+            color: $aheadtxt;
+        }
 
-    ul {
-        li {
-            display:inline-block;
-            list-style: none;
-            text-align: center;
-            margin-right: .5em;
-            line-height: 2em;
-
-            a {
-                        display: block;
-                background-color: $navbg;
-                margin: 0;
-                padding: .2em .5em;
-            }
-            a:hover {
-                background-color: $anavbg;
-                color: $headtxt;
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            align-items: center;
+            li {
+                list-style: none;
+                text-align: center;
+                margin-left: 1.5em;
+                a {
+                    display: block;
+                    @if $fillnav { background: $navbg;}
+                    margin: 0;
+                    padding: .2em .5em;
+                }
+                a:hover {
+                    @if $fillnav { background: $anavbg;}
+                    color: $aheadtxt;
+                }
             }
         }
     }
@@ -93,6 +98,7 @@ a:link, a:visited {
 a:hover {
   color: $alinks;
 }
+
 
 p.ref {
     font-size: 75%;
