@@ -149,6 +149,11 @@ h1 h2 h3 h4 h5 {
     clear: both;
 }
 
+figure {
+    margin: 1em 0;
+    padding: .5em;
+    border: solid 1px;
+}
 
 section.children {
 
@@ -177,3 +182,7 @@ section.children {
     }
 }
 
+.notices {
+    padding: .7em;
+    background: #cdf;
+}

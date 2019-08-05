@@ -1,4 +1,1 @@
-{{ $bibid := .Get 0 }}
-{{ $bib :=  index .Site.Data.references $bibid }}
-{{ .Page.Scratch.Add "cited" ( slice $bibid ) }}
-<span class="cite">[{{ $bibid }}]</span>
+<span class="cite">{{ .Page.Scratch.Add "cited" ( slice (.Get 0) ) }}[{{ .Get 0 }}]</span>
