@@ -5,22 +5,26 @@
 {{ end }}
       {{- .Content -}}
     </section>
+{{ end }}
 
-    <section class="children">
-  {{ if .Sections }}
-      {{ range .Sections }}
-        <div class="relative">
-          {{- partial "summary.html" . -}}
-        </div>
-      {{ end }}
+
+{{ define "after_main" }}
+<section class="children">
+{{ if .Sections }}
+  {{ range .Sections }}
+    <div class="relative">
+      {{- partial "summary.html" . -}}
+    </div>
   {{ end }}
-      
-  {{ range .Paginator.Pages }}
-        <div class="relative">
-          {{- partial "summary.html" . -}}
-        </div>
-  {{ end }}
-    </section>
-    {{- template "_internal/pagination.html" . -}}
+{{ end }}
+  
+{{ range .Paginator.Pages }}
+    <div class="relative">
+      {{- partial "summary.html" . -}}
+    </div>
+{{ end }}
+</section>
+{{- template "_internal/pagination.html" . -}}
+
 {{ end }}
 
