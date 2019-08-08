@@ -1,12 +1,14 @@
 <header>
   <div class="title">
-  <h1 class="brand"><a href="{{ .Site.BaseURL }}">
-    {{- if isset $.Site.Params "brand"}}
-      {{- $.Site.Params.brand -}}
+    <a href="{{ .Site.BaseURL }}">
+    {{ $title := $.Site.Title }}
+    {{- if isSet  $.Site.Params "logo" }}
+      {{ $logo := resources.Get $.Site.Params.logo }}
+      <img src="{{$logo.Permalink}}" class="logo" alt="{{ $title }}"/>
     {{ else }}
-      {{- $.Site.Title -}}
+      <h1 class="brand">{{$title}}</h1>
     {{ end -}}
-  </a></h1>
+    </a>
   </div>
 {{- partial "nav.html" . -}}
 </header>
