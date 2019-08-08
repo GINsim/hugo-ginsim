@@ -193,7 +193,33 @@ section.hg {
 
 .notices {
     padding: .7em;
-    background: #cdf;
+    border: solid 1px;
+    border-left: solid .5em;
+    background: #def;
+    border-color: #35b;
+    margin: 1.5em 0;
+}
+.notices.tip {
+    background: #dfd;
+    border-color: #3b4;
+}
+.notices.warning {
+    background: #fdd;
+    border-color: #b33;
+}
+
+.release {
+    padding: 0;
+    border: solid 1px;
+    background: $releasebg;
+    border-color: $releasebr;
+    margin: 1em 0;
+    
+    h1 {
+        margin: 0;
+        padding: 0 .2em;
+        background: $releasebr;
+    }
 }
 
 tt {
