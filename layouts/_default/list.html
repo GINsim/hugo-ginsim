@@ -1,15 +1,6 @@
-{{ define "main" }}
-    <section class="content">
-{{ if not .Params.notitle }}
-      <h1>{{ .Title }}</h1>
-{{ end }}
-      {{- .Content -}}
-    </section>
-{{ end }}
-
-
 {{ define "after_main" }}
 <section class="children">
+<div class="content">
 {{ if .Sections }}
   {{ range .Sections }}
     <div class="relative">
@@ -23,6 +14,7 @@
       {{- partial "summary.html" . -}}
     </div>
 {{ end }}
+</div>
 </section>
 {{- template "_internal/pagination.html" . -}}
 

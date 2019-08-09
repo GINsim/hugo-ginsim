@@ -1,2 +1,0 @@
-{{ if (.Page.Scratch.Get "section") }}</section>{{else}}{{ .Page.Scratch.Set "section" "true" }}{{end}}
-<section{{ if len .Params | le 1 }} class="{{ .Get 0 }}"{{ if len .Params | le 2 }} id="{{ .Get 1 }}"{{ end }}{{ end }}>
