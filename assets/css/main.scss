@@ -16,8 +16,10 @@ $fillnav: {{ .Site.Data.style.fillnav | default "false" }};
 $navbg: {{ .Site.Data.style.navbg | default "#555" }};
 $anavbg: {{ .Site.Data.style.anavbg | default "lighten($navbg, 10%)" }};
 
-$releasebr:   {{ .Site.Data.style.releasebr | default "#55d" }};
+$releasebr:   {{ .Site.Data.style.releasebr | default "#115" }};
 $releasebg:   {{ .Site.Data.style.releasebg | default "#eef" }};
+$releasehc:   {{ .Site.Data.style.releasehc | default "#fff" }};
+$releasebc:   {{ .Site.Data.style.releasebc | default "#000" }};
 
 @import 'layout';
 
