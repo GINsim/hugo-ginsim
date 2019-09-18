@@ -1,4 +1,6 @@
-{{ $bibid := .Get 0 }}
-{{ $bib :=  index .Site.Data.references $bibid }}
-{{ $.Scratch.Set "_cur_ref_" $bib }}
+{{ $.Scratch.Set "_cur_ref_" .Site.Data.references }}
+{{ range .Params }}
+    {{ $.Scratch.Set "_cur_ref_" (index ($.Scratch.Get "_cur_ref_") .) }}
+{{end}}
 {{ partial "printref.html" $ }}
+

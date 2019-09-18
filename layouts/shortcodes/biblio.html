@@ -1,11 +1,2 @@
-{{ $cited := .Page.Scratch.Get "cited" }}
-{{ with $cited }}
-<div class="biblio">
-{{ range $bibid := $cited }}
-    {{ $bib :=  index $.Site.Data.references $bibid }}
-    {{ $.Scratch.Set "_cur_ref_" $bib }}
-    <p>{{ partial "printref.html" $ }}</p>
-{{ end }}
-</div>
-{{ $.Page.Scratch.Delete "cited" }}
-{{ end }}
+{{ partial "biblio.html" $ }}
+

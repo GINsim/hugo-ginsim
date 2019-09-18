@@ -11,6 +11,7 @@ body {
     color: $maintxt;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14pt;
+    min-width: 800pt;
 }
 
 section {
@@ -21,9 +22,16 @@ section {
         width: 800pt;
         padding: 1em;
 
-        h2 {
-            border-bottom: solid;
+/*
+        h1 {
+            border-bottom: 4px solid;
         }
+        h2 {
+            
+            border-bottom: 1px solid;
+            border-color: #555;
+        }
+*/
     }
 }
 
@@ -171,6 +179,31 @@ section.children > div.content {
     flex-flow: row wrap;
     justify-content: space-around;
 
+
+    ul.pagination {
+        flex-basis: 100%;
+        flex-grow: 1;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: center;
+        li {
+            list-style: none;
+            text-align: center;
+            margin-left: 1.5em;
+            a {
+                display: block;
+                margin: 0;
+                padding: .2em .5em;
+            }
+        }
+        li.active {
+            border-bottom: 2px solid;
+        }
+    }
+
+
     .relative {
         margin: .5em;
         flex: 1 1 25em;
@@ -249,6 +282,19 @@ tt {
         p {
             margin: 0;
             padding: 0;
+        }
+    }
+}
+
+dl.biblio {
+    dt {
+        width: 1em;
+    }
+    dt::after { content: "";}
+    dd {
+        margin: 0 0 0 2em;
+        p {
+            margin: 0;
         }
     }
 }
