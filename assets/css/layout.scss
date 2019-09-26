@@ -225,10 +225,12 @@ section.children > div.content {
 }
 
 section.hg {
-    background: #def;
+    background: #248;
+    color: #fff;
 }
 section.hg2 {
-    background: #efd;
+    background: #153;
+    color: #fff;
 }
 section.hg3 {
     background: #fdb;
@@ -297,4 +299,63 @@ dl.biblio {
             margin: 0;
         }
     }
+}
+
+div.feat {
+    border: 2px solid;
+    border-color: #124;
+    background: #243;
+    margin-top: 2em;
+    padding: .5em;
+
+    h1 {
+        background: #124;
+        font-size: 110%;
+        display: inline;
+        position: relative;
+        padding: 0 1em;
+        top: -2.7ex;
+        left: .5em;
+    }
+}
+
+.feat:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div.download {
+    border: 2px solid;
+    margin: 0 2em;
+    padding: .2em;
+    width: 20em;
+    float: right;
+
+    h1 {
+        background: #fff;
+        font-size: 150%;
+        display: inline;
+        position: relative;
+        padding: 0 1em;
+        top: -2.7ex;
+        left: .5em;
+        
+        img {
+            margin: 0;
+            height: 1.8em;
+            position: relative;
+            top: .2em;
+        }
+    }
+}
+
+
+img[src*="#lefty"] {
+    float: left;
+    margin: 1em;
+}
+
+h1, h2, h3, h4 {
+    clear: both;
 }
