@@ -7,12 +7,11 @@
 {{ $authors := $bib.authors}}
 <p class="ref">
     <span class="title">{{ $bib.title }}</span>
-    <br/><span class="authors">
+    <span class="authors">
 {{ range $idx, $who := $bib.authors }}{{ if $idx }}, {{ end }}{{ $given := index $who 1 }}{{substr $given 0 1}}. {{ index $who 0 }}{{ end }}
     </span>
     {{with $bib.year }}<span class="year">({{ $bib.year }})</span>{{ end }}.
 
-<br/>
 {{/******************    JOURNAL    ******************/}}
 {{with $bib.journal }}
     <span class="journal">{{$bib.journal}}</span>
