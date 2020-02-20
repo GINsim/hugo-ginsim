@@ -72,7 +72,7 @@ header {
         font-size: 80%;
         height: 100%;
         padding: 0;
-        text-aligh: right;
+        text-align: right;
         margin: 0;
 
         a:link, a:visited {
@@ -152,13 +152,10 @@ img {
     margin: 1em
 }
 
-img[src~="right"] {
+img[src$="#right"] {
     float: right;
     margin-top: 0;
     margin-left: 3em;
-}
-
-img[src~="thumb"] {
     height: 150px;
 }
 
