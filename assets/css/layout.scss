@@ -11,7 +11,17 @@ body {
     color: $maintxt;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14pt;
-    min-width: 800pt;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        min-width: 800pt;
+    }
+    section {
+        .content {
+            width: 800pt;
+        }
+    }
 }
 
 section {
@@ -19,7 +29,6 @@ section {
 
     .content {
         margin: 0 auto;
-        width: 800pt;
         padding: 1em;
 
 /*
