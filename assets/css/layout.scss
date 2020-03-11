@@ -357,6 +357,27 @@ div.download {
 }
 
 
+.grid:after {
+    clear: both;
+}
+
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+
+    .people {
+        width: 11em;
+        margin: .5em 1em;
+        padding: .2em;
+        float: left;
+        text-align: center;
+        
+        p { margin: 0; }
+        h1 { font-size: 100%; margin: 0; }
+        img { width: 8em; margin: 0;}
+    }
+}
+
 img[src*="#lefty"] {
     float: left;
     margin: 1em;
