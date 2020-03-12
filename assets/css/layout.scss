@@ -386,3 +386,10 @@ img[src*="#lefty"] {
 h1, h2, h3, h4 {
     clear: both;
 }
+
+.leaflet-pane {
+    img {
+        margin: 0;
+    }
+}
+
