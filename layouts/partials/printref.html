@@ -8,7 +8,7 @@
 <p class="ref">
     <span class="title">{{ $bib.title }}.</span>
     <span class="authors">
-{{ range $idx, $who := $bib.authors }}{{ if $idx }}, {{ end }}{{ $given := index $who 1 }}{{substr $given 0 1}}. {{ index $who 0 }}{{ end }}.
+{{ range $idx, $who := $bib.authors }}{{ if $idx }}, {{ end }}{{ if reflect.IsMap $who }}{{ $given := $who.given }}{{substr $given 0 1}}. {{ $who.family }}{{ else if reflect.IsSlice $who }}{{ $given := index $who 1 }}{{substr $given 0 1}}. {{ index $who 0 }}{{ else }}{{$who}}{{ end }}{{ end }}.
     </span>
 
 {{/******************    JOURNAL    ******************/}}
