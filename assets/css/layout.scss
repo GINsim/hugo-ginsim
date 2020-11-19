@@ -153,8 +153,12 @@ a:hover {
         background: #333;
         margin-right: .5em;
         float: left;
-        width: 1em;
-        height: 1em;
+        width: 1.3em;
+        height: 1.3em;
+        img.oa {
+            height: 100%;
+            margin: 0 auto;
+        }
     }
     .preprint{
         background: #bbb;
@@ -171,10 +175,6 @@ a:hover {
     
     img.pdf {
         width: 1.2em;
-        margin:0;
-    }
-    img.oa {
-        height: 1.2em;
         margin:0;
     }
 }

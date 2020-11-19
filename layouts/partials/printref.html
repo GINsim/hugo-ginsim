@@ -16,9 +16,11 @@
 {{end }}
 {{/**************   link to PDF document   **************/}}
 {{ $pdf := (print "references/"  $bibid ".pdf") }}
-{{ $authors := $bib.authors}}
 <div class="ref{{ with $bib.domain }} {{ $bib.domain }}{{end}}">
-    {{ with $bib.type }}<div title="Type: {{ $bib.type }}" class="type {{ $bib.type }}"> </div>{{end}}
+    <div class="type{{ with $bib.type }} {{$bib.type}}" title="Type: {{ $bib.type }}{{if in $bib.tags "OpenAccess" }} (Open Access){{end}}{{end}}">
+    {{if in $bib.tags "OpenAccess" }}{{ $icon := resources.Get "icons/openaccess_white.svg" }}<img class="oa" src="{{ $icon.Permalink }}" />
+{{- end -}}</div>
+{{- if (fileExists (print "static/" $pdf)) -}}{{ $icon := resources.Get "icons/pdf.svg" }}<a href="{{ $pdf | absURL }}"><img title="Download as PDF" class="pdf" src="{{ $icon.Permalink }}" /></a>{{ end -}}
     {{ with $bib.links }}<a href="{{ $.Scratch.Get "url" }}">{{end}}
     <span class="title">{{ $bib.title }}.</span>
     {{ with $bib.links }}</a>{{end}}
@@ -33,8 +35,5 @@
 
 {{/****************   POSITION/YEAR   ****************/}}
 <span class="position">{{ with $bib.volume }}{{ $bib.volume }}{{ end }}{{ with $bib.pages }}:{{ $bib.pages  }}{{ end }}</span>{{with $bib.year }}<span class="year"> ({{ $bib.year }})</span>{{ end }}.
-{{ with $bib.tags }}{{ if in $bib.tags "OpenAccess" }}{{ $icon := resources.Get "icons/openaccess.svg" }}<img title="Open Access" class="oa" src="{{ $icon.Permalink }}" />{{ end }}{{end}}
-{{ if (fileExists (print "static/" $pdf)) -}}{{ $icon := resources.Get "icons/pdf.svg" }}<a href="{{ $pdf | absURL }}"><img title="Download as PDF" class="pdf" src="{{ $icon.Permalink }}" /></a>{{ end }}
-
 </div>
 {{ end }}
