@@ -140,8 +140,6 @@ a:hover {
 .ref {
     font-size: 75%;
     
-    border-left: solid .5em;
-    padding: .1em .5em;
     margin-bottom: .5em;
     
     .title {
@@ -152,13 +150,14 @@ a:hover {
     }
     .type {
         display: block;
+        background: #333;
         margin-right: .5em;
         float: left;
         width: 1em;
         height: 1em;
     }
     .preprint{
-        background: #ddd;
+        background: #bbb;
     }
     .review {
         background: #7c7;
@@ -168,6 +167,15 @@ a:hover {
     }
     .conference {
         background: #44d;
+    }
+    
+    img.pdf {
+        width: 1.2em;
+        margin:0;
+    }
+    img.oa {
+        height: 1.2em;
+        margin:0;
     }
 }
 
